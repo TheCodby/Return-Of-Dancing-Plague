@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 306fdbfda996bb347b6d54bee3c9774f
+guid: 5531b1146af51e34a83893f0b4a0c229
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Encode Sans SC
+  - woodcutter VIRUS
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
