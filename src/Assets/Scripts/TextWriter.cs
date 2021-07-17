@@ -34,8 +34,8 @@ public class TextWriter : MonoBehaviour
     {
         if (uiText != null)
         {
-            timer -= timePerCharacter;
-            if (timer <= 0f)
+            timer -= Time.deltaTime;
+            while (timer <= 0f)
             {
                 timer += timePerCharacter;
                 characterIndex++;
@@ -67,7 +67,7 @@ public class TextWriter : MonoBehaviour
                 ImageFade fadeScript1 = GameObject.Find("/MainMenu/Story2").AddComponent<ImageFade>();
                 GameObject.Find("/MainMenu/Story2").GetComponent<Image>().enabled = true;
                 messageText = GameObject.Find("/MainMenu/Text").GetComponent<Text>();
-                AddWriter(messageText, "The infection is back, you must escape from dancers to survive. \nGood luck..!", 1f);
+                AddWriter(messageText, "The epidemic returned in 2021 in Paris. \nUnfortunately, this time you didn't survive as you think.. you have to infect others with dance.\nGood luck", 1f);
             }else{
                 Destroy(GameObject.Find("/MainMenu/Story2"));
                 Destroy(GameObject.Find("/MainMenu/Text"));
