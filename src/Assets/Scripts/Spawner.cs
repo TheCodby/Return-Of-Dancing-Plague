@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
         SpawnEnemy();
     }
 
-    void SpawnEnemy () 
+    public void SpawnEnemy () 
      {
         Vector3 spawnPoint = new Vector3(10f, 0.57f, 0f);
         int Order = 1;
@@ -20,10 +20,10 @@ public class Spawner : MonoBehaviour
         for(int i = 0; i < numEnemies; i++)
         {
             int spawnObjectIndex = Random.Range(0,spawnObject.Length);
-
             Vector3 spawnPosition = spawnPoint;
             GameObject Enemy= Instantiate(spawnObject[spawnObjectIndex],spawnPosition,spawnObject[spawnObjectIndex].transform.rotation);
             Enemy.gameObject.GetComponent<SpriteRenderer>().sortingOrder = Order;
+            Enemy.gameObject.GetComponent<Enemy>().dance = true;
             if (Random.value >= 0.5 && !thereNormal)
             {
                 Enemy.gameObject.GetComponent<Enemy>().dance = false;

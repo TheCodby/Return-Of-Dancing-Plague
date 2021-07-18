@@ -16,12 +16,15 @@ public class Escape : MonoBehaviour
             }
             else
             {
-                PlayGame(); 
+                ImageFade fadeScript = GameObject.Find("/MainMenu/FadeEnd").AddComponent<ImageFade>();
+                fadeScript.moveSpeed = 1f;
+                StartCoroutine(PlayGame());
             }
         }
     }
-    public void PlayGame()
+    IEnumerator PlayGame()
     {
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void SkipStory()

@@ -6,8 +6,9 @@ public class Enemy : MonoBehaviour
 {
     public float speed = .5f;
     int EnemyUnit;
-    public bool dance = true;
+    public bool dance;
     public int unit = 0;
+    public bool Dancing = false;
     private Vector3 pos;
     Animator m_Animator;
     // Start is called before the first frame update
@@ -24,7 +25,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos -= new Vector3(50, 0,0);
-        transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
+        if (!Dancing)
+        {
+            pos -= new Vector3(50, 0,0);
+            transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
+        }
+        if (dance && !m_Animator.GetBool("Dance"))
+        {
+            m_Animator.SetBool("Dance", true);
+        }
     }
 }

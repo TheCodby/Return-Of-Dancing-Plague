@@ -15,6 +15,7 @@ public class StoryWriter : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        Cursor.visible = false;
         textWriter.AddWriter(messageText, "The dancing plague of 1518 was a dancing mania case that occurred during the the Holy Roman Empire in Strasbourg, Alsace (modern-day France) from July 1518 to September 1518. Somewhere between 50 and 400 people kept dancing uncontrollably. Some people said that the first dancer was a woman.", .1f);
     }
 
